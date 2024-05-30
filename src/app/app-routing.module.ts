@@ -6,7 +6,7 @@ import { AddComponent } from './add/add.component';
 import { DeleteComponent } from './delete/delete.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   {path:'add',component:AddComponent},
   {path:'edit',component:EditComponent},
   {path:'delete',component:DeleteComponent}
