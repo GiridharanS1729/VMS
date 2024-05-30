@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    float: left;
+}
+
+.nav-link:hover {
+    background-color: #555;
+}
+
+.content {
+    position: relative;
+}
+
+.corner-images {
+    position: absolute;
+    top: 0;
+}
+
+.left-corner-img {
+    width: 50px;
+    
+}
+
+.right-corner-img {
+    width: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+.center-img {
+    display: block;
+    margin: 20px auto;
+}
