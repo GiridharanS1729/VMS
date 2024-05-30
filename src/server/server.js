@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const axios=require("axios");
+const axios = require("axios");
 const app = express();
 
 mongoose.connect('mongodb://localhost:27017/visitor', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -26,10 +26,10 @@ app.post('/signup', async (req, res) => {
         if (user) {
             return res.status(400).json({ message: 'Username already exists.' });
         }
-        else{
-        const user = await User.create({ username, password });
-        console.log('User created:', user);
-        res.send("Account has been made!");
+        else {
+            const user = await User.create({ username, password });
+            console.log('User created:', user);
+            res.send("Account has been made!");
         }
     } catch (err) {
         console.error('Error creating user:', err);
@@ -44,7 +44,7 @@ app.post('/login', async (req, res) => {
         const user = await User.findOne({ username, password });
         if (user) {
             console.log('Login successful:', user);
-            res.sendFile(__dirname,"main.html");
+            res.sendFile(__dirname, "main.html");
         } else {
             console.log('Login failed: User not found');
             res.send('Login failed: User not found');
@@ -61,12 +61,12 @@ app.post('/login', async (req, res) => {
 
 
 const homeSchema = new mongoose.Schema({
-    _id:Number,
+    _id: Number,
     username: String,
     phone: Number,
-    aadhar:String,
-    intime:Date,
-    outtime:Date
+    aadhar: String,
+    intime: Date,
+    outtime: Date
 });
 
 const Home = mongoose.model('Home', homeSchema, "persons");
@@ -74,10 +74,10 @@ const Home = mongoose.model('Home', homeSchema, "persons");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/add', async (req, res) => {
-    const { idc,username,phone,aadhar, intime, outtime } = req.body;
+    const { idc, username, phone, aadhar, intime, outtime } = req.body;
     console.log(idc);
     try {
-        const user = await Home.create({ _id:idc,username:username,phone:phone,aadhar:aadhar, intime:intime, outtime:outtime });
+        const user = await Home.create({ _id: idc, username: username, phone: phone, aadhar: aadhar, intime: intime, outtime: outtime });
         // i+=1;
         console.log('User created:', user);
         res.send("Account has been made!");
@@ -92,13 +92,14 @@ app.post('/add', async (req, res) => {
 
 app.get('/view', async (req, res) => {
     try {
-        const perPage = 3;
+        const perPage = 8;
         const page = parseInt(req.query.page) || 1;
         const startLetters = req.query.start || '';
 
         const searchQuery = startLetters
             ? { username: { $regex: `^${startLetters}`, $options: 'i' } }
             : {};
+
 
         const totalRecords = await Home.countDocuments(searchQuery);
         const totalPages = Math.ceil(totalRecords / perPage);
@@ -199,7 +200,7 @@ app.get('/view', async (req, res) => {
                 </style>
             </head>
             <body>
-                <p>All Visitors:</p>
+                <p>All Visitors</p>
                 <div class="search-container">
                     <input type="text" id="searchInput" name="search" placeholder="Search by Name" value="${startLetters}">
                 </div>
@@ -207,11 +208,11 @@ app.get('/view', async (req, res) => {
                     <thead>
                         <tr>
                             <th>Room Number</th>
-                            <th>User Name</th>
+                            <th>Name</th>
                             <th>Contact Number</th>
                             <th>Aadhar Number</th>
-                            <th>In-Time</th>
-                            <th>Out-Time</th>
+                            <th>In Time</th>
+                            <th>Out Time</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -258,36 +259,39 @@ app.get('/view', async (req, res) => {
 
 
 app.post('/update', async (req, res) => {
-    const { idc,username,phone,aadhar, intime, outtime } = req.body;
+    const { idc, username, phone, aadhar, intime, outtime } = req.body;
     try {
-        const user = await Home.findOne({ _id:idc }).exec();
+        const user = await Home.findOne({ _id: idc }).exec();
         if (user) {
-            user.username=username 
-            user.phone=phone 
-            user.aadhar=aadhar 
-            user.intime=intime
-            user.outtime=outtime
+            Object.assign(user, {
+                username: username || user.username,
+                phone: phone || user.phone,
+                aadhar: aadhar || user.aadhar,
+                intime: intime || user.intime,
+                outtime: outtime || user.outtime
+            });
             await user.save();
             console.log("User updated successfully");
-            res.status(200).json({ message: 'User updated successfully' });
+            return res.status(200).json({ message: 'User updated successfully' });
         } else {
-            console.log("Incorrect email or password");
-            res.status(401).json({ message: 'Incorrect email or password' });
+            console.log("User not found");
+            return res.status(404).json({ message: 'User not found' });
         }
     } catch (error) {
         console.error("Error updating user:", error);
-        res.status(500).json({ message: 'An error occurred' });
+        return res.status(500).json({ message: 'An error occurred' });
     }
 });
+
 
 
 app.post('/delete', async (req, res) => {
     const { idc } = req.body;
     try {
-        const deletedUser = await Home.deleteOne( {_id:idc} );
+        const deletedUser = await Home.deleteOne({ _id: idc });
         console.log(idc);
 
-        if (Home.findOne({_id:idc})) {
+        if (Home.findOne({ _id: idc })) {
             res.status(200).send(`User ${idc} deleted successfully`);
         } else {
             res.status(404).send(`User not found ${deletedUser}`);
@@ -298,24 +302,6 @@ app.post('/delete', async (req, res) => {
     }
 });
 
-app.post('/delete', async (req, res) => {
-    const { idc } = req.body;
-    try {
-        const user = await Home.findOne({ _id:idc }).exec();
-        if (user) {
-            // Delete user
-            await Home.deleteOne({ idc });
-            console.log("User deleted successfully");
-            res.status(200).json({ message: 'User deleted successfully' });
-        } else {
-            console.log("Incorrect email or password");
-            res.status(401).json({ message: 'Incorrect email or password' });
-        }
-    } catch (error) {
-        console.error("Error deleting user:", error);
-        res.status(500).json({ message: 'An error occurred' });
-    }
-});
 
 const PORT = 4201;
 app.listen(PORT, () => {
