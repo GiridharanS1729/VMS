@@ -19,29 +19,3 @@ body {
 .nav-link:hover {
     background-color: #555;
 }
-
-.content {
-    position: relative;
-}
-
-.corner-images {
-    position: absolute;
-    top: 0;
-}
-
-.left-corner-img {
-    width: 50px;
-    
-}
-
-.right-corner-img {
-    width: 50px;
-    width: 50px;
-    float: left;
-    margin-right: 10px;
-}
-
-.center-img {
-    display: block;
-    margin: 20px auto;
-}
