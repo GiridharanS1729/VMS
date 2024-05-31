@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { DeleteComponent } from './delete/delete.component';
 import { EditComponent } from './edit/edit.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EditComponent } from './edit/edit.component';
     HomeComponent,
     AddComponent,
     DeleteComponent,
-    EditComponent
+    EditComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

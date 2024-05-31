@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  background: url('./assets/vms.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+}

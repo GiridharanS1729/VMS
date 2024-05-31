@@ -19,40 +19,42 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post('/signup', async (req, res) => {
-    const { username, password } = req.body;
+  const { username, password } = req.body;
 
-    try {
-        const user = await User.findOne({ username, password });
-        if (user) {
-            return res.status(400).json({ message: 'Username already exists.' });
-        }
-        else {
-            const user = await User.create({ username, password });
-            console.log('User created:', user);
-            res.send("Account has been made!");
-        }
-    } catch (err) {
-        console.error('Error creating user:', err);
-        res.status(500).send('Signup failed');
-    }
+  try {
+      const user = await User.findOne({ username, password });
+      if (user) {
+          return res.status(400).json({ message: 'Username already exists.' });
+      }
+      else{
+      const user = await User.create({ username, password });
+      console.log('User created:', user);
+      res.send("Account has been made!");
+      }
+  } catch (err) {
+      console.error('Error creating user:', err);
+      res.status(500).send('Signup failed');
+  }
 });
 
-app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
 
-    try {
-        const user = await User.findOne({ username, password });
-        if (user) {
-            console.log('Login successful:', user);
-            res.sendFile(__dirname, "main.html");
-        } else {
-            console.log('Login failed: User not found');
-            res.send('Login failed: User not found');
-        }
-    } catch (err) {
-        console.error('Error finding user:', err);
-        res.status(500).send('Login failed');
-    }
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+      const user = await User.findOne({ username, password });
+      if (user) {
+          console.log('Login successful:', user);
+          // res.send("Login successful");
+          return res.status(400).json({ message: 'Login successful' });
+      } else {
+          console.log('Login failed: User not found');
+          res.send('Login failed: User not found');
+      }
+  } catch (err) {
+      console.error('Error finding user:', err);
+      res.status(500).send('Login failed');
+  }
 });
 
 
