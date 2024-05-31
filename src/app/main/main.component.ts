@@ -16,9 +16,10 @@ export class MainComponent {
     const password = (document.getElementById('password') as HTMLInputElement).value;
 
     if (action === 'login') {
+      form.action = 'http://localhost:4201/login';
       this.router.navigate(['/home']); // Replace 'main-page' with the route of your main page component
     } else if (action === 'signup') {
-      form.action = 'http://127.0.0.1:4201/signup';
+      form.action = 'http://localhost:4201/signup';
       form.submit();
     }
   }
