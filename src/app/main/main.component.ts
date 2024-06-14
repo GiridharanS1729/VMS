@@ -17,7 +17,7 @@ export class MainComponent {
 
     if (action === 'login') {
       form.action = 'http://localhost:4201/login';
-      this.router.navigate(['/home']); // Replace 'main-page' with the route of your main page component
+      this.router.navigate(['/home']);
     } else if (action === 'signup') {
       form.action = 'http://localhost:4201/signup';
       form.submit();

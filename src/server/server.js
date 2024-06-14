@@ -5,12 +5,12 @@ const axios = require("axios");
 const app = express();
 
 mongoose.connect('mongodb://localhost:27017/visitor', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('Could not connect to MongoDB', err));
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Could not connect to MongoDB', err));
 
 const userSchema = new mongoose.Schema({
-    username: String,
-    password: String
+  username: String,
+  password: String
 });
 
 const User = mongoose.model('User', userSchema, "logsigin");
@@ -22,18 +22,18 @@ app.post('/signup', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-      const user = await User.findOne({ username, password });
-      if (user) {
-          return res.status(400).json({ message: 'Username already exists.' });
-      }
-      else{
+    const user = await User.findOne({ username, password });
+    if (user) {
+      return res.status(400).json({ message: 'Username already exists.' });
+    }
+    else {
       const user = await User.create({ username, password });
       console.log('User created:', user);
       res.send("Account has been made!");
-      }
+    }
   } catch (err) {
-      console.error('Error creating user:', err);
-      res.status(500).send('Signup failed');
+    console.error('Error creating user:', err);
+    res.status(500).send('Signup failed');
   }
 });
 
@@ -42,18 +42,18 @@ app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-      const user = await User.findOne({ username, password });
-      if (user) {
-          console.log('Login successful:', user);
-          // res.send("Login successful");
-          return res.status(400).json({ message: 'Login successful' });
-      } else {
-          console.log('Login failed: User not found');
-          res.send('Login failed: User not found');
-      }
+    const user = await User.findOne({ username, password });
+    if (user) {
+      console.log('Login successful:', user);
+      // res.send("Login successful");
+      return res.status(400).json({ message: 'Login successful' });
+    } else {
+      console.log('Login failed: User not found');
+      res.send('Login failed: User not found');
+    }
   } catch (err) {
-      console.error('Error finding user:', err);
-      res.status(500).send('Login failed');
+    console.error('Error finding user:', err);
+    res.status(500).send('Login failed');
   }
 });
 
@@ -63,12 +63,12 @@ app.post('/login', async (req, res) => {
 
 
 const homeSchema = new mongoose.Schema({
-    _id: Number,
-    username: String,
-    phone: Number,
-    aadhar: String,
-    intime: Date,
-    outtime: Date
+  _id: Number,
+  username: String,
+  phone: Number,
+  aadhar: String,
+  intime: Date,
+  outtime: Date
 });
 
 const Home = mongoose.model('Home', homeSchema, "persons");
@@ -76,56 +76,57 @@ const Home = mongoose.model('Home', homeSchema, "persons");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/add', async (req, res) => {
-    const { idc, username, phone, aadhar, intime, outtime } = req.body;
-    console.log(idc);
-    try {
-        const user = await Home.create({ _id: idc, username: username, phone: phone, aadhar: aadhar, intime: intime, outtime: outtime });
-        // i+=1;
-        console.log('User created:', user);
-        res.send("Account has been made!");
-        res.end();
-    } catch (err) {
-        console.error('Error creating user:', err);
-        res.status(500).send(`New User Creation failed ${err}`);
-    }
+  const { idc, username, phone, aadhar, intime, outtime } = req.body;
+  console.log(idc);
+  try {
+    const user = await Home.create({ _id: idc, username: username, phone: phone, aadhar: aadhar, intime: intime, outtime: outtime });
+    // i+=1;
+    console.log('User created:', user);
+    res.send("Account has been made!");
+    res.end();
+  } catch (err) {
+    console.error('Error creating user:', err);
+    res.status(500).send(`New User Creation failed ${err}`);
+  }
 });
 
 
 
 app.get('/view', async (req, res) => {
-    try {
-        const perPage = 8;
-        const page = parseInt(req.query.page) || 1;
-        const startLetters = req.query.start || '';
+  try {
+    const perPage = 8;
+    const page = parseInt(req.query.page) || 1;
+    const startLetters = req.query.start || '';
 
-        const searchQuery = startLetters
-            ? { username: { $regex: `^${startLetters}`, $options: 'i' } }
-            : {};
+    const searchQuery = startLetters
+      ? { username: { $regex: `^${startLetters}`, $options: 'i' } }
+      : {};
 
 
-        const totalRecords = await Home.countDocuments(searchQuery);
-        const totalPages = Math.ceil(totalRecords / perPage);
+    const totalRecords = await Home.countDocuments(searchQuery);
+    const totalPages = Math.ceil(totalRecords / perPage);
+    const total = totalRecords;
 
-        const events = await Home.find(searchQuery)
-            .skip((page - 1) * perPage)
-            .limit(perPage);
+    const events = await Home.find(searchQuery)
+      .skip((page - 1) * perPage)
+      .limit(perPage);
 
-        const formatDate = (dateString) => {
-            const dateObject = new Date(dateString);
-            const formattedDate = dateObject.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: '2-digit'
-            });
-            const formattedTime = dateObject.toLocaleTimeString('en-US', {
-                hour12: true,
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-            return `${formattedDate} [${formattedTime}]`;
-        };
+    const formatDate = (dateString) => {
+      const dateObject = new Date(dateString);
+      const formattedDate = dateObject.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit'
+      });
+      const formattedTime = dateObject.toLocaleTimeString('en-US', {
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      return `${formattedDate} [${formattedTime}]`;
+    };
 
-        res.send(`
+    res.send(`
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -146,10 +147,18 @@ app.get('/view', async (req, res) => {
                     background-color: #343a40;
                     color: white;
                     text-align: center;
+                    }
+                .tot{
+                  font-size: 24px;
+                  text-align: left;
+                  margin-top: 50px;
+                  margin-left: 100px;
+                  font-weight:800;
+                  color:#a00;
                 }
                 .search-container {
                     text-align: right;
-                    margin: 20px 10%;
+                    margin: 10px 10%;
                 }
                 .search-container input[type="text"] {
                     padding: 10px;
@@ -202,9 +211,12 @@ app.get('/view', async (req, res) => {
                 </style>
             </head>
             <body>
-                <div class="search-container">
-                    <input type="text" id="searchInput" name="search" placeholder="Search by Name" value="${startLetters}">
-                </div>
+            <div class="tot">
+            Total Visitors : ${total}
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" name="search" placeholder="Search by Name" value="${startLetters}">
+            </div>
                 <table>
                     <thead>
                         <tr>
@@ -249,10 +261,10 @@ app.get('/view', async (req, res) => {
             </body>
             </html>
         `);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send(`Internal Server Error: ${error}`);
-    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(`Internal Server Error: ${error}`);
+  }
 });
 
 
@@ -260,51 +272,51 @@ app.get('/view', async (req, res) => {
 
 
 app.post('/update', async (req, res) => {
-    const { idc, username, phone, aadhar, intime, outtime } = req.body;
-    try {
-        const user = await Home.findOne({ _id: idc }).exec();
-        if (user) {
-            Object.assign(user, {
-                username: username || user.username,
-                phone: phone || user.phone,
-                aadhar: aadhar || user.aadhar,
-                intime: intime || user.intime,
-                outtime: outtime || user.outtime
-            });
-            await user.save();
-            console.log("User updated successfully");
-            return res.status(200).json({ message: 'User updated successfully' });
-        } else {
-            console.log("User not found");
-            return res.status(404).json({ message: 'User not found' });
-        }
-    } catch (error) {
-        console.error("Error updating user:", error);
-        return res.status(500).json({ message: 'An error occurred' });
+  const { idc, username, phone, aadhar, intime, outtime } = req.body;
+  try {
+    const user = await Home.findOne({ _id: idc }).exec();
+    if (user) {
+      Object.assign(user, {
+        username: username || user.username,
+        phone: phone || user.phone,
+        aadhar: aadhar || user.aadhar,
+        intime: intime || user.intime,
+        outtime: outtime || user.outtime
+      });
+      await user.save();
+      console.log("User updated successfully");
+      return res.status(200).json({ message: 'User updated successfully' });
+    } else {
+      console.log("User not found");
+      return res.status(404).json({ message: 'User not found' });
     }
+  } catch (error) {
+    console.error("Error updating user:", error);
+    return res.status(500).json({ message: 'An error occurred' });
+  }
 });
 
 
 
 app.post('/delete', async (req, res) => {
-    const { idc } = req.body;
-    try {
-        const deletedUser = await Home.deleteOne({ _id: idc });
-        console.log(idc);
+  const { idc } = req.body;
+  try {
+    const deletedUser = await Home.deleteOne({ _id: idc });
+    console.log(idc);
 
-        if (Home.findOne({ _id: idc })) {
-            res.status(200).send(`User ${idc} deleted successfully`);
-        } else {
-            res.status(404).send(`User not found ${deletedUser}`);
-        }
-    } catch (error) {
-        console.error('Error deleting user:', error);
-        res.status(500).send('Internal Server Error');
+    if (Home.findOne({ _id: idc })) {
+      res.status(200).send(`User ${idc} deleted successfully`);
+    } else {
+      res.status(404).send(`User not found ${deletedUser}`);
     }
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 
 const PORT = 4201;
 app.listen(PORT, () => {
-    console.log(`Server is running on port http://127.0.0.1:${PORT}`);
+  console.log(`Server is running on port http://127.0.0.1:${PORT}`);
 });

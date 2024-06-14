@@ -1,10 +1,11 @@
+import { isPlatformBrowser } from '@angular/common';
 import { Component } from '@angular/core';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.component.html',
-  styleUrls: ['./payments.component.css'] // Note the correct plural form styleUrls
+  styleUrls: ['./payments.component.css']
 })
 export class PaymentsComponent {
 
@@ -22,7 +23,7 @@ export class PaymentsComponent {
           type: 'PAYMENT_GATEWAY',
           parameters: {
             'gateway': 'example',
-            'gatewayMerchantId': 'exampleGatewayMerchantId'
+            'gatewayMerchantId': 'GatewayMerchantId'
           }
         }
       }
@@ -35,10 +36,11 @@ export class PaymentsComponent {
       totalPriceStatus: "FINAL",
       totalPriceLabel: "Total",
       totalPrice: "10.00",
-      currencyCode: "USD",
-      countryCode: "US"
+      currencyCode: "INR",
+      countryCode: "IN"
     }
   }
+
 
   onLoadPaymentData(e: any) {
     console.log(e, ">> Data");

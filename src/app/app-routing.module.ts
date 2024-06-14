@@ -5,14 +5,16 @@ import { EditComponent } from './edit/edit.component';
 import { AddComponent } from './add/add.component';
 import { DeleteComponent } from './delete/delete.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'home', component: HomeComponent},
-  {path:'add',component:AddComponent},
-  {path:'edit',component:EditComponent},
-  {path:'delete',component:DeleteComponent},
-  {path:'payment',component:PaymentsComponent}
+  { path: '', component: HomeComponent },
+  { path: 'main', component: MainComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'add', component: AddComponent },
+  { path: 'edit', component: EditComponent },
+  { path: 'delete', component: DeleteComponent },
+  { path: 'payment', component: PaymentsComponent }
 ];
 
 @NgModule({

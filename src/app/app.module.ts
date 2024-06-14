@@ -18,7 +18,8 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     DeleteComponent,
     EditComponent,
     MainComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
