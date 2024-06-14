@@ -202,7 +202,6 @@ app.get('/view', async (req, res) => {
                 </style>
             </head>
             <body>
-                <p>All Visitors</p>
                 <div class="search-container">
                     <input type="text" id="searchInput" name="search" placeholder="Search by Name" value="${startLetters}">
                 </div>
