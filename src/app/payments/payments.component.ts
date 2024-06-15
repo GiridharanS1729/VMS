@@ -1,6 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
 import { Component } from '@angular/core';
-import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 @Component({
   selector: 'app-payments',

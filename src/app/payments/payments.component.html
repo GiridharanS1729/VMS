@@ -1,9 +1,18 @@
-<div class="wrapper">
-  <google-pay-button
+<div class="main">
+
+  <div class="wrapper">
+    <google-pay-button
     environment="TEST"
     buttonType="buy"
     buttonColor="black"
     [paymentRequest]="paymentRequest"
     (loadpaymentdata)="onLoadPaymentData($event)">
   </google-pay-button>
+</div>
+<h3>or scan with QR</h3>
+
+<div class="im">
+  <img src="../../assets/gpayqr.png" alt="QR GPay">
+</div>
+
 </div>

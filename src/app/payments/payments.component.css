@@ -1,5 +1,24 @@
+.main{
+  backdrop-filter: blur(100px);
+  width:fit-content;
+  height: 50%;
+  background-color: #00000025;
+  margin-top: 200px;
+  margin: 150px auto;
+  padding:50px
+}
 .wrapper{
   width:100%;
-  margin-top: 200px;
-
+}
+.im{
+  background-color: #4a1500;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+.im img{
+  margin-top:10px;
+  width:180px;
+  height: 180px;
 }
