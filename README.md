@@ -23,8 +23,8 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 ## 📸 Screenshots
 
-![Dashboard Screenshot][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/assets/images/dash.png]
-![Visitor Log Screenshot][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/assets/images/log.png]
+![Dashboard Screenshot][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/src/assets/images/dash.png]
+![Visitor Log https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/src/assets/images/log.png]
 
 ## 📋 Prerequisites
 
