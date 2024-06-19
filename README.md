@@ -2,7 +2,7 @@
 
 Welcome to the **Visitor Management System**! This project is designed to efficiently manage visitors using modern web technologies like Angular, Node.js, TypeScript, MongoDB, and RESTful APIs. The system also includes payment services for enhanced functionalities.
 
-![Visitor Management System](https://example.com/your-image-link.png)
+![Visitor Management System][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/assets/images/main.png]
 
 ## 🚀 Features
 
@@ -23,8 +23,8 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 ## 📸 Screenshots
 
-![Dashboard Screenshot](https://example.com/dashboard-screenshot.png)
-![Visitor Log Screenshot](https://example.com/visitor-log-screenshot.png)
+![Dashboard Screenshot][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/assets/images/dash.png]
+![Visitor Log Screenshot][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/assets/images/log.png]
 
 ## 📋 Prerequisites
 
@@ -46,27 +46,10 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 3. **Install dependencies for the backend**
     ```sh
-    cd backend/server
-    npm install
-    ```
-## 📦 Installation
-
-1. **Clone the repository**
-    ```sh
-    git clone https://github.com/yourusername/visitor-management-system.git
-    cd visitor-management-system
-    ```
-
-2. **Install dependencies for the frontend**
-    ```sh
+    cd src/server
     npm install
     ```
 
-3. **Install dependencies for the backend**
-    ```sh
-    cd backend/server
-    npm install
-    ```
 
 ## 🚀 Running the Application
 
