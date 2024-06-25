@@ -2,7 +2,7 @@
 
 Welcome to the **Visitor Management System**! This project is designed to efficiently manage visitors using modern web technologies like Angular, Node.js, TypeScript, MongoDB, and RESTful APIs. The system also includes payment services for enhanced functionalities.
 
-![Visitor Management System][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/assets/images/main.png]
+![Visitor Management System](./assets/Screenshots/main.png)
 
 ## 🚀 Features
 
@@ -23,8 +23,8 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 ## 📸 Screenshots
 
-![Dashboard Screenshot][https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/src/assets/images/dash.png]
-![Visitor Log https://github.com/GiridharanS1729/visitor-mgt-system/tree/master/src/assets/images/log.png]
+![Dashboard Screenshot](./assets/Screenshots/dash.png)
+![Visitor Log](./assets/Screenshots/log.png)
 
 ## 📋 Prerequisites
 
