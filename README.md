@@ -1,5 +1,5 @@
 # Visitor Management System 🌟
-![View Report](./22ITR025_Visitor_Management_SystemReport.pdf)
+[View Report](./22ITR025_Visitor_Management_SystemReport.pdf)
 
 Welcome to the **Visitor Management System**! This project is designed to efficiently manage visitors using modern web technologies like Angular, Node.js, TypeScript, MongoDB, and RESTful APIs. The system also includes payment services for enhanced functionalities.
 
