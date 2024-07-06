@@ -59,7 +59,7 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 1. **Open Terminal 1**
 2. **Navigate to the backend folder**
     ```sh
-    cd visitor-management-system/backend/server
+    cd Visitor_Management_System/backend/server
     ```
 3. **Run the backend server**
     ```sh
@@ -73,7 +73,7 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 1. **Open Terminal 2**
 2. **Navigate to the root project directory**
     ```sh
-    cd visitor-management-system
+    cd Visitor_Management_System
     ```
 3. **Run the frontend server**
     ```sh
