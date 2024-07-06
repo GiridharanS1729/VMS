@@ -36,8 +36,8 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 1. **Clone the repository**
     ```sh
-    git clone https://github.com/GiridharanS1729/visitor-management-system.git
-    cd visitor-management-system
+    git clone https://github.com/GiridharanS1729/Visitor_Management_System.git
+    cd Visitor_Management_System
     ```
 
 2. **Install dependencies for the frontend**
