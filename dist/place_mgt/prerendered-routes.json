@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/",
+    "/add",
+    "/delete",
+    "/edit",
+    "/home",
+    "/main",
+    "/payment"
+  ]
+}
