@@ -90,7 +90,7 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 4. **Extract Text Content**: Use the text extraction feature to capture visitor details.
 5. **Track Visitors**: Monitor the entry and exit of visitors in real-time.
 6. **CRUD Operations**: Perform Create, Read, Update, and Delete operations on visitor data using the integrated API.
-7. **Payment**: Users can pay using the integrated GPay component for any premium features.
+7. **Payment**: Users can pay using the integrated Pay component for any premium features or by using GPay QR Code.
 
 ## 🤝 Contributing
 
