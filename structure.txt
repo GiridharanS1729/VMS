@@ -1,4 +1,4 @@
-visitor-mgt - Copy
+Visitor_Management_System
 ├── .editorconfig
 ├── .gitignore
 ├── angular.json
