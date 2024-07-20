@@ -21,9 +21,9 @@ def random_date(start_date):
 start_date = datetime.strptime("2024-03-01", "%Y-%m-%d")
 
 tamilnadu_names = [
-    "Arun", "Balaji", "Chandran", "Deepak", "Elango", "Feroz", "Gopi", "Hari", "Indrajit",
-    "Jagan", "Karthik", "Lalith", "Madhan", "Naveen", "Omprakash", "Pradeep", "Rajan", 
-    "Sandeep", "Tharun", "Uday", "Vikram", "Yogesh", "Zakir"
+    "Giridharan", "Dinesh", "Chandran", "Deepak", "Elango", "Ashok", "Gopi", "Hari", "Indrajit",
+    "Jagan", "Bharanidharan", "Lalith", "Madhan", "Naveen", "Omprakash", "Pradeep", "Rajan", 
+    "Sandeep", "Tharun", "Vaibav", "Vikram", "Siva", "Bharath"
 ]
 
 random.shuffle(tamilnadu_names)  # Shuffle to get random unique names
