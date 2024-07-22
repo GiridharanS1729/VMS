@@ -16,9 +16,12 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: Angular, TypeScript
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
+- **Frontend**: 
+ ![Angular.js](https://img.shields.io/badge/angular.js-%23E23237.svg?style=for-the-badge&logo=angularjs&logoColor=white) 
+ ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) 
+- **Backend**:  ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 
+ ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
+- **Database**:  ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) 
 - **API**: RESTful services
 - **Payments**: Integrated GPay component
 
