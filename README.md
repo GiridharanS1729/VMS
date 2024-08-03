@@ -27,7 +27,9 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 ## 📸 Screenshots
 
+**Add new visitor**
 ![Dashboard Screenshot](./assets/Screenshots/dash.png)
+**View all visitors**
 ![Visitor Log](./assets/Screenshots/log.png)
 
 ## 📋 Prerequisites
