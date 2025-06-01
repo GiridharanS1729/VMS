@@ -317,6 +317,10 @@ app.post('/delete', async (req, res) => {
   }
 });
 
+// main route
+app.get("/", (req, res) => {
+    res.send("Welcome to Visitor Management System Server!");
+});
 
 const PORT = 4201;
 app.listen(PORT, () => {
