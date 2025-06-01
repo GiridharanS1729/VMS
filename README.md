@@ -1,9 +1,9 @@
 # Visitor Management System 🌟
-[View Report](./22ITR025_Visitor_Management_SystemReport.pdf)
+[View Report](/output/22ITR025_VMSReport.pdf)
 
 Welcome to the **Visitor Management System**! This project is designed to efficiently manage visitors using modern web technologies like Angular, Node.js, TypeScript, MongoDB, and RESTful APIs. The system also includes payment services for enhanced functionalities.
 
-![Visitor Management System](./assets/Screenshots/main.png)
+![Visitor Management System](/output/Screenshots/main.png)
 
 ## 🚀 Features
 
@@ -28,9 +28,9 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 ## 📸 Screenshots
 
 **Add new visitor**
-![Dashboard Screenshot](./assets/Screenshots/dash.png)
+![Dashboard Screenshot](/output/Screenshots/dash.png)
 **View all visitors**
-![Visitor Log](./assets/Screenshots/log.png)
+![Visitor Log](/output/Screenshots/log.png)
 
 ## 📋 Prerequisites
 
@@ -41,18 +41,19 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 1. **Clone the repository**
     ```sh
-    git clone https://github.com/GiridharanS1729/Visitor_Management_System.git
-    cd Visitor_Management_System
+    git clone https://github.com/GiridharanS1729/VMS.git
+    cd VMS
     ```
 
 2. **Install dependencies for the frontend**
     ```sh
+    cd client
     npm install
     ```
 
 3. **Install dependencies for the backend**
     ```sh
-    cd src/server
+    cd server
     npm install
     ```
 
@@ -64,7 +65,7 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 1. **Open Terminal 1**
 2. **Navigate to the backend folder**
     ```sh
-    cd Visitor_Management_System/backend/server
+    cd VMS/server
     ```
 3. **Run the backend server**
     ```sh
@@ -78,7 +79,7 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 1. **Open Terminal 2**
 2. **Navigate to the root project directory**
     ```sh
-    cd Visitor_Management_System
+    cd VMS/client
     ```
 3. **Run the frontend server**
     ```sh
@@ -99,7 +100,7 @@ Welcome to the **Visitor Management System**! This project is designed to effici
 
 ## 🤝 Contributing
 
-We welcome contributions! Please read our [CONTRIBUTING.md](https://github.com/GiridharanS1729/visitor-management-system/blob/main/CONTRIBUTING.md) for guidelines on how to contribute to the project.
+We welcome contributions! Please read our [CONTRIBUTING.md](https://github.com/GiridharanS1729/VMS/blob/main/CONTRIBUTING.md) for guidelines on how to contribute to the project.
 
 ## 📫 Contact
 
@@ -110,7 +111,7 @@ For any inquiries or issues, please contact us at:
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/GiridharanS1729/visitor-management-system/blob/main/LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/GiridharanS1729/VMS/blob/main/LICENSE) file for more details.
 
 ---
 

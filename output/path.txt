@@ -1,0 +1,81 @@
+server
+├── .env
+├── .gitignore
+├── package.json
+└── server.js
+============================================================================================
+client
+├── .editorconfig
+├── .gitignore
+├── angular.json
+├── package.json
+├── server.ts
+├── src
+│   ├── app
+│   │   ├── add
+│   │   │   ├── add.component.css
+│   │   │   ├── add.component.html
+│   │   │   ├── add.component.spec.ts
+│   │   │   └── add.component.ts
+│   │   ├── api.service.spec.ts
+│   │   ├── api.service.ts
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.server.ts
+│   │   ├── app.module.ts
+│   │   ├── delete
+│   │   │   ├── delete.component.css
+│   │   │   ├── delete.component.html
+│   │   │   ├── delete.component.spec.ts
+│   │   │   └── delete.component.ts
+│   │   ├── edit
+│   │   │   ├── edit.component.css
+│   │   │   ├── edit.component.html
+│   │   │   ├── edit.component.spec.ts
+│   │   │   └── edit.component.ts
+│   │   ├── home
+│   │   │   ├── home.component.css
+│   │   │   ├── home.component.html
+│   │   │   ├── home.component.spec.ts
+│   │   │   └── home.component.ts
+│   │   ├── main
+│   │   │   ├── main.component.css
+│   │   │   ├── main.component.html
+│   │   │   ├── main.component.spec.ts
+│   │   │   └── main.component.ts
+│   │   ├── payments
+│   │   │   ├── payments.component.css
+│   │   │   ├── payments.component.html
+│   │   │   ├── payments.component.spec.ts
+│   │   │   └── payments.component.ts
+│   │   ├── user.service.spec.ts
+│   │   └── user.service.ts
+│   ├── assets
+│   │   ├── .gitkeep
+│   │   ├── gpay-qr.png
+│   │   ├── gpayqr.png
+│   │   ├── images
+│   │   │   ├── dash.png
+│   │   │   ├── log.png
+│   │   │   └── main.png
+│   │   └── vms.jpg
+│   ├── g.ico
+│   ├── index.html
+│   ├── main.server.ts
+│   ├── main.ts
+│   └── styles.css
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+============================================================================================
+output
+├── 22ITR025_VMSReport.pdf
+├── assets
+│   └── Screenshots
+│       ├── dash.png
+│       ├── log.png
+│       └── main.png
+└── path.txt
